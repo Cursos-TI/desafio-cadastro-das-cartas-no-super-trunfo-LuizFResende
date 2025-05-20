@@ -19,9 +19,9 @@ printf("!!!!!!!!!!BEM VINDO AO SUPER TRUNFO!!!!!!!!!!!\n\n\n");
    printf("INSIRA O NOME DA CIDADE DESEJADA (EX..SAO-PAULO)\nNAO USE ESPACOS PARA SEPARAR OS NOMES USE(-) :  ");
    scanf(" %s", &cidade);
 
-   unsigned long int populacao;
+  float populacao;
    printf("INSIRA O TOTAL DE PESSSOAS (POPULACAO), DA CIDADE ESCOLHIDA: ");
-   scanf(" %lu", &populacao);
+   scanf(" %f", &populacao);
 
    float area;
    printf("INDIQUE A AREA DA CIDADE:  ");
@@ -46,7 +46,7 @@ printf("!!!!!!!!!!BEM VINDO AO SUPER TRUNFO!!!!!!!!!!!\n\n\n");
    float SuperPoderC1;
 
    SuperPoderC1 = (float)(populacao + area + PIB + pontos_turisticos + PIB_per_capta) - (dens_populacional1);
-   printf("SUPER PODER: %fpower\n\n\n", SuperPoderC1);
+   printf("SUPER PODER: %f - power\n\n\n", SuperPoderC1);
 
 
 
@@ -72,21 +72,22 @@ printf("!!!!!!!!!!BEM VINDO AO SUPER TRUNFO!!!!!!!!!!!\n\n\n");
    char cidade2[20];
    printf("INSIRA O NOME DA CIDADE DESEJADA (EX..SAO-PAULO)\nNAO USE ESPACOS PARA SEPARAR OS NOMES USE(-) :  ");
    scanf(" %s", &cidade2);
-   unsigned long int populacao2;
+
+   float populacao2;
    printf("INSIRA O TOTAL DE PESSSOAS (POPULACAO), DA CIDADE ESCOLHIDA: ");
-   scanf(" %lu", &populacao2);
+   scanf(" %f", &populacao2);
 
    float area2;
-   printf("INDIQUE A AREA DA CIDADE:  ");
+   printf("INDIQUE A AREA DA CIDADE: ");
    scanf(" %f", &area2);
 
    float PIB2;
    printf("INDIQUE O VALOR DO PIB DA SUA CIDADE: ");
-   scanf(" %f", &PIB2);
+   scanf("  %f ", &PIB2);
 
    int pontos_turisticos2;
    printf("INDIQUE A QUANTIDADE DE PONTOS TURISTICOS EM SUA CIDADE: ");
-   scanf("%d", &pontos_turisticos2);
+   scanf(" %d ", &pontos_turisticos2);
 
     float dens_populacional2;
     dens_populacional2 = populacao2 / area2;
@@ -99,7 +100,7 @@ printf("!!!!!!!!!!BEM VINDO AO SUPER TRUNFO!!!!!!!!!!!\n\n\n");
    float SuperPoderC2;
 
    SuperPoderC2 = (float)(populacao2 + area2 + PIB2 + pontos_turisticos2 + PIB2_per_capta) - (dens_populacional2);
-   printf(" SUPER PODER: %fpower\n\n\n", SuperPoderC2);
+   printf(" SUPER PODER: %f power\n\n\n", SuperPoderC2);
 
 
 
@@ -113,44 +114,94 @@ printf("!!!!!!!!!!BEM VINDO AO SUPER TRUNFO!!!!!!!!!!!\n\n\n");
 
    ///GAME
 
-   int PopulacaoComp, AreaComp , PIBComp, PontosTuristicosComp , DensidadePPComp , PIBpercaptaComp, SuperPComp;
-
-   PopulacaoComp =  populacao  >  populacao2;
-   AreaComp =  area  >  area2 ;
-   PIBComp =  PIB  >  PIB2 ;
-   PontosTuristicosComp =   pontos_turisticos  >  pontos_turisticos2;
-   DensidadePPComp =  inversao1  >  inversao2;
-   PIBpercaptaComp =  PIB_per_capta  >  PIB2_per_capta;
-   SuperPComp =  SuperPoderC1  >  SuperPoderC2 ;
-
-
 
    printf("\n\n\n\n!!!!!!!!!!!!!!!!!!!CARTAS CRIADAS COM SUCESSO!!!!!!!!!!!!!!!!!!\n\n\n");
    printf("ESSES SAO OS VALORES DAS CARTAS..........\n\n\n\n");
 
 
-   printf("PRIMEIRA CARTA.!\nCIDADE : %s\nLETRA: %c\nCODIGO: %s\nPOPULACAO: %d\nAREA DA CIDADE: %.3f Km^2\nPIB: %.3f BILHOES DE REAIS\nPONTOS TURISTICOS: %d\n",  cidade, letra, codigo, populacao, area, PIB, pontos_turisticos);
+   printf("PRIMEIRA CARTA.!\nCIDADE : %s\nLETRA: %c\nCODIGO: %s\nPOPULACAO: %.4f\nAREA DA CIDADE: %.3f Km^2\nPIB: %.4f BILHOES DE REAIS\nPONTOS TURISTICOS: %d\n",  cidade, letra, codigo, populacao, area, PIB, pontos_turisticos);
    printf("DENSIDADE POPULACIONAL: %.2f - POR M^2\n", dens_populacional1);
    printf("PIB PER-CAPTA: %lu REAIS\n\n\n", PIB_per_capta);
-   printf("SEGUNDA CARTA.!\nCIDADE : %s\nLETRA: %s\nCODIGO: %s\nPOPULACAO: %d\nAREA DA CIDADE: %.3f Km^2\nPIB: %.3f BILHOES DE REAIS\nPONTOS TURISTICOS: %d\n",  cidade2, letra2, codigo2, populacao2, area2, PIB2, pontos_turisticos2);
+   printf("SEGUNDA CARTA.!\nCIDADE : %s\nLETRA: %s\nCODIGO: %s\nPOPULACAO: %.4f\nAREA DA CIDADE: %.3f Km^2\nPIB: %.4f BILHOES DE REAIS\nPONTOS TURISTICOS: %d\n",  cidade2, letra2, codigo2, populacao2, area2, PIB2, pontos_turisticos2);
    printf("DENSIDADE POPULACINAL: %.2f - POR M^2\n", dens_populacional2);
    printf("PIB PER-CAPTA: %lu REAIS\n\n\n", PIB2_per_capta);
 
-
-   printf("  ---- DESAFIO DAS CARTAS----- \n\n\n--INICIADO!\n\n " );
-
-printf("-REGRAS DO JOGO--\n\nO VALOR (1) SERA ATRIBUIDO A VITORIA DA CARTA 1 E O NUMERO (0) SERA ATRIBUIDO A VITORIA DA CARTA 2----\n\n\n");
-printf("POPULACAO: CARTA (%d) VENCEU!\n", PopulacaoComp);
-printf("AREA: CARTA (%d) VENCEU!\n", AreaComp);
-printf("PIB: CARTA (%d) VENCEU!\n", PIBComp);
-printf("PONTOS TURISTICOS: CARTA (%d) VENCEU!\n", PontosTuristicosComp);
-printf("DENSIDADE PUPOLACIONAL: CARTA (%d) VENCEU!\n", DensidadePPComp);
-printf("PIB PER-CAPTA: CARTA (%d) VENCEU!\n", PIBpercaptaComp);
-printf("SUPER PODER: CARTA (%d) VENCEU!\n", SuperPComp);
+   //COMPARACAO ENTRE AS CARTAS COM APRESENTACAO DOS VALORES
 
 
+printf("\n\n!!!JOGO!!!!\n\n");
+
+      printf("Carta 1 %s - POPULACAO:  %.4f \n", cidade, populacao);
+      printf("Carta 2 %s - POPULACAO:  %.4f \n", cidade2, populacao2);
+   if(populacao > populacao2){
+      printf("Carta 1 (%s) venceu! :\n\n", cidade);
+   }else {
+         printf("Carta 2 (%s) venceu!\n\n", cidade2);
+   }
+
+
+      printf("Carta 1 %s - AREA:  %.3f \n",cidade , area);
+      printf("Carta 2 %s - AREA:  %.3f \n",cidade2 , area2);
+   if(area > area2){
+      printf("Carta 1 (%s) venceu!\n\n", cidade);
+   }else {
+         printf("Carta 2 (%s) venceu!\n\n", cidade2);
+   }
+
+
+      printf("Carta 1 %s - PIB:  %.4f \n", cidade, PIB);
+      printf("Carta 2 %s - PIB:  %.4f \n", cidade2, PIB2);
+   if(PIB > PIB2){
+      printf("Carta 1 (%s) venceu!\n\n", cidade);
+   }else {
+         printf("Carta 2 (%s) venceu!\n\n", cidade2);
+
+   }
+
+
+      printf("Carta 1 %s - PONTOS TURISTICOS:  %d \n", cidade, pontos_turisticos);
+      printf("Carta 2 %s - PONTOS TURISTICOS:  %d \n", cidade2, pontos_turisticos2);
+   if(pontos_turisticos > pontos_turisticos2){
+      printf("Carta 1 (%s) venceu!\n\n", cidade);
+
+   }else {
+         printf("Carta 2 (%s) venceu!\n\n", cidade2);
+
+   }
+
+      printf("Carta 1 %s - DENSIDADE POPULACIONAL: %.2f \n", cidade, inversao1);
+      printf("Carta 2  %s - DENSIDADE POPULACIONAL: %.2f \n", cidade2, inversao2);
+   if (inversao1 < inversao2){
+      printf("Carta 1 (%s) venceu!\n\n", cidade);
+
+   }else{
+       printf("Carta 2 (%s) venceu!\n\n", cidade2);
+   }
+
+
+     printf("Carta 1 %s - PIB PER-CAPTA:  %.3f \n", cidade, PIB_per_capta);
+     printf("Carta 2 %s - PIB PER-CAPTA:  %.3f \n", cidade2, PIB2_per_capta);
+  if (PIB_per_capta > PIB2_per_capta){
+         printf("Carta 1 (%s) venceu!\n\n", cidade);
+
+  }else{
+         printf("Carta 2 (%s) venceu!\n\n", cidade2);
+
+  }
+
+      printf("Carta 1 %s - SUPER PODER:  %d \n",cidade , SuperPoderC1);
+      printf("Carta 2 %s - SUPER PODER:  %d \n",cidade2 , SuperPoderC2);
+   if (SuperPoderC1 > SuperPoderC2){
+               printf("Carta 1 (%s) venceu!\n\n", cidade);
+
+
+  }else{
+         printf("Carta 2 (%s) venceu!\n\n", cidade2);
+
+
+  }
 
 
 
-return 0 ;
+   return 0 ;
 }
